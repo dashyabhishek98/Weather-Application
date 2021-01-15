@@ -1,0 +1,48 @@
+<div class="container-fluid" class="pl-0 pr-0">
+  <div *ngIf="runLoader==1" id="preloader">
+    <div id="loader"></div>
+  </div>
+  <div *ngIf="runLoader==0">
+    <div style="background-color: navy; height: 60px;">  
+      <div class="row col-12" style="padding: 12px;">
+        <input type="text" class="col-sm-10 col-md-4 offset-md-4 searchBar" placeholder="Enter city name"/> &nbsp;
+        <button type="button" class="btn btn-danger col-sm-1" value="Find Weather" (click)="onCitySearch()" 
+        style="font-size: small;vertical-align: initial;border-radius: 15px;">Find</button> 
+      </div>
+    </div>
+    <div class="col-md-12">
+      <br/>
+    </div>
+    <!-- <div class="row col-md-12 offset-md-3" style="margin-left: 150px;">
+            <h5>Current Weather and forecast in {{weather.name}},{{weather.sys.country}} city.</h5>
+            <h2>weather in {{weather.name}},{{weather.sys.country}}</h2>        
+    </div> -->
+    <div style="margin-left: 14%;margin-right:14%;">
+    <div class="table-responsive" style="max-height:450px;box-sizing: content-box;">         
+        <table class="table table-light table-striped table-bordered table-sm" 
+        style="box-sizing: content-box;">
+          <thead style="background-color: royalblue;">
+              <td><b>City</b></td><td><b>{{weather.name}}, {{weather.sys.country}}</b></td>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="align-content: center;">Humidity</td><td>{{weather.main.humidity}}</td>
+            </tr>
+            <tr><td>Temparature</td><td>{{weather.main.temp | celcius}} c</td>
+            </tr>
+            <tr>
+                <td>Sunrise</td><td>{{weather.sys.sunrise * 1000 | date:'short'}}</td>
+            </tr>
+            <tr>
+                <td>Sunset</td><td>{{weather.sys.sunset * 1000 | date:'short'}}</td>
+            </tr>
+            <tr>
+                <td>Geo cords</td><td>[{{weather.coord.lat}} , {{weather.coord.lon}}]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="map" class="map" ></div>
+    </div>
+      </div>
+</div>

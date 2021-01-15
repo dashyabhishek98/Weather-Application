@@ -1,0 +1,22 @@
+/* #map {
+    height: 400px;
+    position: initial;
+    overflow: auto;
+  } */
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .map {
+      width: 100%;
+      height: 300px;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    /* For Desktop */
+    .map {
+      height: 325px; width: 970px; position: initial;
+    }
+    .searchBar{
+      width: 300px; 
+    }
+  }
